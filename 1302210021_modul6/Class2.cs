@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,9 @@ namespace _1302210021_modul6
 
         public sayaTubeVidio(string title)
         {
+            Contract.Requires(title.Length <=  200);
+            Contract.Assert(title != null);
+
             this.title = title;
         }
 
@@ -35,7 +39,6 @@ namespace _1302210021_modul6
 
         public void printVidioDetail()
         {
-            
             Console.WriteLine("User "+ id +" Vidio "+ title +" playcount "+ playCount);
             
         }

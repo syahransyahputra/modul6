@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,7 +34,9 @@ namespace _1302210021_modul6
 
         public void addVidio(sayaTubeVidio vid) 
         {
-            uploadedVidio.Add(vid);
+            //.Requires(vid != null);
+            //Contract.Assert(vid.getplayCount() !> 25000000);
+            this.uploadedVidio.Add(vid);
         }
 
         public List<sayaTubeVidio> getVidioList()
